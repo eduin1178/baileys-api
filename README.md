@@ -120,6 +120,3 @@ Currently there's no known issues. If you find any, please kindly open a new one
 -   Automatically reading incoming messages is now disabled by default. Uncomment `whatsapp.js:91-105` to enable this behaviour.
 -   If you have problems when deploying on **CPanel** or any other similar hosting, transpiling your code into **CommonJS** should fix the problems.
 
-## Notice
-
-This project is intended for learning purpose only, don't use it for spamming or any activities that's prohibited by **WhatsApp**.
