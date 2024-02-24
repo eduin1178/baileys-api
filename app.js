@@ -8,7 +8,7 @@ import cors from 'cors'
 const app = express()
 
 const host = process.env.HOST || undefined
-const port = parseInt(process.env.PORT ?? 8000)
+const port = parseInt(process.env.PORT ?? 3000)
 
 app.use(cors())
 app.use(express.urlencoded({ extended: true }))
@@ -20,11 +20,11 @@ const listenerCallback = () => {
     console.log(`Server is listening on http://${host ? host : 'localhost'}:${port}`)
 }
 
-app.listen(port, listenerCallback)
-// if (host) {
-//     app.listen(port, host, listenerCallback)
-// } else {
-// }
+if (host) {
+    app.listen(port, host, listenerCallback)
+} else {
+    app.listen(port, listenerCallback)
+}
 
 nodeCleanup(cleanup)
 
