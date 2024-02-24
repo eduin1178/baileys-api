@@ -20,11 +20,11 @@ const listenerCallback = () => {
     console.log(`Server is listening on http://${host ? host : 'localhost'}:${port}`)
 }
 
-if (host) {
-    app.listen(port, host, listenerCallback)
-} else {
-    app.listen(port, listenerCallback)
-}
+app.listen(port, listenerCallback)
+// if (host) {
+//     app.listen(port, host, listenerCallback)
+// } else {
+// }
 
 nodeCleanup(cleanup)
 
