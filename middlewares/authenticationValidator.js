@@ -1,12 +1,10 @@
 import response from './../response.js'
 
 const validate = (req, res, next) => {
-    const apiKey = req.get('apikey') ?? req.query.apikey
-
+    const apiKey = req.headers['apikey'];
     if (!process.env.AUTHENTICATION_GLOBAL_AUTH_TOKEN) {
-        return next()
+        return next();
     }
-
     if (apiKey !== process.env.AUTHENTICATION_GLOBAL_AUTH_TOKEN) {
         return response(res, 401, false, 'Authentication failed.')
     }
